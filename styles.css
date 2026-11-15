@@ -2245,7 +2245,7 @@ p {
 .cover-flourish {
     position: absolute;
     left: 50%;
-    z-index: 1;
+    z-index: 3;
     width: min(78%, 34rem);
     height: clamp(4rem, 10vh, 7rem);
     opacity: .48;
@@ -2264,7 +2264,7 @@ p {
 }
 
 .cover-flourish-bottom {
-    bottom: 11%;
+    top: 76%;
     transform: translateX(-50%) rotate(180deg);
 }
 
@@ -2286,7 +2286,7 @@ p {
     }
 
     .cover-flourish-bottom {
-        bottom: 12%;
+        top: 76%;
     }
 
     .cover-layout::before,
@@ -2307,6 +2307,25 @@ p {
         isolation: isolate;
         outline: 1px solid rgba(166,139,76,.2);
         outline-offset: -24px;
+    }
+
+    .cover-copy {
+        flex: 0 1 54rem;
+        margin-inline: auto;
+    }
+
+    .cover-flourish {
+        width: min(64%, 42rem);
+        height: clamp(4.5rem, 10vh, 7rem);
+        opacity: .58;
+    }
+
+    .cover-flourish-top {
+        top: 5%;
+    }
+
+    .cover-flourish-bottom {
+        top: 76%;
     }
 
     .cover-layout::before,
