@@ -644,7 +644,10 @@ p {
     }
 
     .cover-copy h1 {
-        font-size: clamp(4rem,22vw,7rem)
+        height: min(55vh,29rem);
+        height: min(55svh,29rem);
+        font-size: clamp(5rem,28vw,8.5rem);
+        line-height: .78
     }
 
     .cover-botanical {
