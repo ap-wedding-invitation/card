@@ -632,15 +632,29 @@ p {
     }
 
     .cover-copy h1 {
-        flex-direction: column;
-        justify-content: center;
-        gap: 0;
+        display: grid;
+        grid-template-rows: 1fr auto 1fr;
+        height: min(58vh,31rem);
+        height: min(58svh,31rem);
+        width: 100%;
         margin: .05em 0;
         font-size: clamp(4rem,22vw,7rem);
-        line-height: .78
+        line-height: .82
+    }
+
+    .cover-copy h1 span:first-child {
+        grid-row: 1;
+        align-self: center
+    }
+
+    .cover-copy h1 span:last-child {
+        grid-row: 3;
+        align-self: center
     }
 
     .cover-copy h1 i {
+        grid-row: 2;
+        justify-self: center;
         font-size: clamp(1.75rem,7vw,2.5rem);
         margin: .08em 0
     }
