@@ -600,7 +600,7 @@ p {
     }
 
     .cover-copy h1 {
-        font-size: clamp(2.75rem,min(14vw,8.5vh),6rem)
+        font-size: clamp(3.5rem,min(18vw,10vh),6.5rem)
     }
 
     .cover-botanical {
@@ -624,6 +624,11 @@ p {
 
     .eyebrow {
         letter-spacing: .16em
+    }
+
+    .cover-copy .eyebrow {
+        font-size: clamp(1.05rem,4.8vw,1.35rem);
+        letter-spacing: .14em
     }
 }
 
