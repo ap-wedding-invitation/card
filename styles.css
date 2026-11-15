@@ -2145,18 +2145,22 @@ p {
         flex: 1 1 auto;
         min-height: 0;
         display: grid;
-        grid-template-rows: minmax(3rem, .8fr) minmax(0, 4fr) minmax(3rem, .8fr);
+        grid-template-rows: minmax(5.5rem, .9fr) minmax(0, 4fr) minmax(2.5rem, .55fr);
         align-items: stretch;
         justify-items: center;
         text-align: center;
     }
 
     .cover-copy .eyebrow {
-        align-self: center;
+        align-self: end;
+        max-width: 18ch;
         margin: 0;
-        font-size: clamp(.95rem, 3.8vw, 1.2rem);
-        line-height: 1.35;
-        letter-spacing: .13em;
+        color: #3c2d28;
+        font-size: clamp(2.2rem, 9vw, 3rem);
+        font-weight: 600;
+        line-height: 1.02;
+        letter-spacing: .08em;
+        text-wrap: balance;
     }
 
     .cover-copy h1 {
@@ -2223,10 +2227,6 @@ p {
     .cover-layout {
         padding-top: max(1rem, calc(env(safe-area-inset-top, 0px) + .25rem));
         padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
-    }
-
-    .cover-copy .eyebrow {
-        font-size: clamp(.85rem, 3.5vw, 1rem);
     }
 
     .cover-copy h1 {

@@ -1,0 +1,314 @@
+/* One responsive layout for the full-screen invitation cover. */
+.opening {
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 0;
+}
+
+.cover-layout {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: max(1.25rem, env(safe-area-inset-top, 0px)) var(--gutter) calc(5.25rem + env(safe-area-inset-bottom, 0px));
+}
+
+.cover-layout::before {
+    content: "";
+    position: absolute;
+    inset: clamp(1.5rem, 4vw, 2.5rem);
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(#80602d, #80602d) left top / 1.8rem 1.5px,
+        linear-gradient(#80602d, #80602d) left top / 1.5px 1.8rem,
+        linear-gradient(#80602d, #80602d) right top / 1.8rem 1.5px,
+        linear-gradient(#80602d, #80602d) right top / 1.5px 1.8rem,
+        linear-gradient(#80602d, #80602d) left bottom / 1.8rem 1.5px,
+        linear-gradient(#80602d, #80602d) left bottom / 1.5px 1.8rem,
+        linear-gradient(#80602d, #80602d) right bottom / 1.8rem 1.5px,
+        linear-gradient(#80602d, #80602d) right bottom / 1.5px 1.8rem;
+    background-repeat: no-repeat;
+    opacity: .58;
+}
+
+.cover-copy {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: minmax(2.5rem, .7fr) minmax(0, 4fr) minmax(2.5rem, .7fr);
+    justify-items: center;
+    align-items: stretch;
+    width: min(100%, 60rem);
+    max-width: 60rem;
+    height: min(100%, 50rem);
+    min-width: 0;
+    text-align: center;
+    color: #4d3a35;
+    opacity: 0;
+    transform: translateY(.75rem);
+    transition: opacity 1s ease, transform 1.3s cubic-bezier(.2,.75,.2,1);
+}
+
+.cover-copy .eyebrow {
+    grid-row: 1;
+    align-self: center;
+    margin: 0;
+    color: #6f5a52;
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: .15em;
+    line-height: 1.35;
+}
+
+.cover-copy h1 {
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto minmax(0, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    color: #4d3a35;
+    font-family: var(--font-names);
+    font-size: clamp(5rem, 12vw, 11rem);
+    font-weight: 400;
+    line-height: .8;
+}
+
+.cover-copy h1 span {
+    display: block;
+    white-space: nowrap;
+    line-height: .84;
+}
+
+.cover-copy h1 span:first-child {
+    grid-row: 1;
+    align-self: end;
+    padding-bottom: clamp(.2rem, 1vh, .65rem);
+}
+
+.cover-copy h1 span:last-child {
+    grid-row: 3;
+    align-self: start;
+    padding-top: clamp(.2rem, 1vh, .65rem);
+}
+
+.cover-copy h1 span:first-child::first-letter,
+.cover-copy h1 span:last-child::first-letter {
+    font-size: 1.12em;
+    line-height: .8;
+}
+
+.cover-copy h1 i {
+    grid-row: 2;
+    align-self: center;
+    margin: 0;
+    color: #7d685d;
+    font-family: var(--font-body);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.cover-copy .ornament {
+    grid-row: 3;
+    align-self: center;
+    margin: .5rem 0 0;
+}
+
+.cover-flourish {
+    position: absolute;
+    left: 50%;
+    z-index: 5;
+    width: min(62vw, 40rem);
+    height: clamp(3.75rem, 8vh, 6rem);
+    opacity: .72;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.cover-flourish svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-flourish-top {
+    top: 2%;
+}
+
+.cover-flourish-bottom {
+    top: 77%;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.cover-side-sprig {
+    position: absolute;
+    top: 39%;
+    z-index: 5;
+    width: clamp(2.5rem, 8vw, 3.75rem);
+    height: clamp(7rem, 19vh, 10rem);
+    opacity: .68;
+    pointer-events: none;
+}
+
+.cover-side-sprig svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cover-side-sprig-left {
+    left: 3.5%;
+    transform: rotate(-7deg);
+}
+
+.cover-side-sprig-right {
+    right: 3.5%;
+    transform: scaleX(-1) rotate(-7deg);
+}
+
+.cover-botanical {
+    opacity: .55;
+}
+
+.scroll-prompt {
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100% - 2 * var(--gutter));
+}
+
+@media (max-width: 37.5rem) {
+    .cover-layout {
+        padding: max(1rem, calc(env(safe-area-inset-top, 0px) + .25rem)) var(--gutter) calc(5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cover-layout::before {
+        inset: 1.35rem;
+        opacity: .82;
+    }
+
+    .cover-copy {
+        width: min(100%, 31rem);
+        height: 100%;
+        grid-template-rows: minmax(6rem, .9fr) minmax(0, 4fr) minmax(2.5rem, .55fr);
+    }
+
+    .cover-copy .eyebrow {
+        align-self: end;
+        width: 100%;
+        max-width: 22rem;
+        transform: translateY(clamp(1rem, 3vh, 1.5rem));
+        color: #493a31;
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 9vw, 2.8rem);
+        font-weight: 500;
+        line-height: 1.08;
+        letter-spacing: .08em;
+        text-wrap: balance;
+    }
+
+    .cover-copy::before,
+    .cover-copy::after {
+        content: "\2766";
+        position: absolute;
+        top: 52%;
+        z-index: 1;
+        color: #80602d;
+        font-family: var(--font-body);
+        font-size: clamp(1.25rem, 5vw, 1.8rem);
+        line-height: 1;
+        opacity: .7;
+    }
+
+    .cover-copy::before {
+        left: .1rem;
+        transform: rotate(-24deg);
+    }
+
+    .cover-copy::after {
+        right: .1rem;
+        transform: scaleX(-1) rotate(-24deg);
+    }
+
+    .cover-copy h1 {
+        font-size: clamp(4.5rem, 25vw, 7.6rem);
+    }
+
+    .cover-copy .ornament {
+        margin-top: .35rem;
+    }
+
+    .cover-flourish {
+        width: min(88vw, 27rem);
+        height: clamp(3rem, 7.5vh, 4.5rem);
+        opacity: .82;
+    }
+
+    .cover-flourish-top {
+        top: 2%;
+    }
+
+    .cover-flourish-bottom {
+        top: 77%;
+    }
+
+    .cover-side-sprig {
+        top: 39%;
+        width: clamp(2.25rem, 9vw, 3rem);
+        height: clamp(7rem, 18vh, 9rem);
+        opacity: .76;
+    }
+
+    .cover-botanical {
+        width: min(36vw, 13rem);
+        height: 42%;
+        opacity: .48;
+        filter: drop-shadow(0 1px 1px rgba(80, 90, 58, .24));
+    }
+
+    .scroll-prompt {
+        padding: .8rem 1rem;
+        font-size: clamp(.72rem, 2.8vw, .9rem);
+        letter-spacing: .1em;
+    }
+}
+
+@media (max-width: 37.5rem) and (max-height: 45rem) {
+    .cover-copy {
+        grid-template-rows: minmax(6rem, .9fr) minmax(0, 4fr) minmax(2rem, .55fr);
+    }
+
+    .cover-copy h1 {
+        font-size: clamp(4rem, 23vw, 6.5rem);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 32rem) {
+    .cover-layout {
+        padding-top: max(.75rem, env(safe-area-inset-top, 0px));
+        padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cover-copy {
+        height: min(100%, 21rem);
+        grid-template-rows: minmax(2rem, .6fr) minmax(0, 4fr) minmax(2rem, .6fr);
+    }
+
+    .cover-copy h1 {
+        font-size: clamp(3.5rem, 14vh, 6rem);
+    }
+
+    .cover-flourish {
+        height: 3rem;
+        opacity: .34;
+    }
+}
