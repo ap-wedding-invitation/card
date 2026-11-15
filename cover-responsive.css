@@ -206,14 +206,15 @@
         align-self: end;
         width: 100%;
         max-width: 22rem;
-        transform: translateY(clamp(1rem, 3vh, 1.5rem));
+        transform: translateY(clamp(1.25rem, 3.6vh, 1.8rem));
         color: #493a31;
         font-family: var(--font-display);
-        font-size: clamp(2.2rem, 9vw, 2.8rem);
+        font-size: clamp(1.05rem, 4.6vw, 1.25rem);
+        font-style: italic;
         font-weight: 500;
-        line-height: 1.08;
-        letter-spacing: .08em;
-        text-wrap: balance;
+        line-height: 1.2;
+        letter-spacing: .06em;
+        white-space: nowrap;
     }
 
     .cover-copy::before,
