@@ -2014,3 +2014,104 @@ p {
         letter-spacing: .015em
     }
 }
+
+
+/* ==========================================================
+   MOBILE COVER SPACING FIX
+   Append-only overrides: preserves the existing design,
+   curtain animation, typography and invitation functionality.
+   ========================================================== */
+
+@media (orientation: portrait) and (max-width: 37.5rem) {
+    /* Use the available phone viewport without forcing a tall
+       minimum that creates unnecessary blank space. */
+    .opening {
+        min-height: 0;
+        min-height: 100svh;
+    }
+
+    /* Keep the cover copy comfortably inside the screen and
+       leave room for the invitation button at the bottom. */
+    .cover-layout {
+        align-items: center;
+        justify-content: center;
+        padding:
+            max(2.5rem, env(safe-area-inset-top, 0px))
+            var(--gutter)
+            calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cover-copy {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 34rem;
+    }
+
+    .cover-copy .eyebrow {
+        font-size: clamp(.9rem, 3.7vw, 1.15rem);
+        letter-spacing: .13em;
+        line-height: 1.5;
+        margin-bottom: clamp(1rem, 3.5vh, 2rem);
+    }
+
+    /* KEY FIX: remove the oversized 55svh name grid.
+       Let the names use their natural height and controlled gaps. */
+    .cover-copy h1 {
+        height: auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(.45rem, 1.8vh, 1rem);
+        margin: 0;
+        font-size: clamp(5rem, 25vw, 7.5rem);
+        line-height: .82;
+    }
+
+    .cover-copy h1 span {
+        display: block;
+        line-height: .85;
+        white-space: nowrap;
+    }
+
+    .cover-copy h1 i {
+        display: block;
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        line-height: 1;
+        margin: .15rem 0;
+    }
+
+    .cover-copy .ornament {
+        margin-top: clamp(1rem, 3vh, 1.6rem);
+    }
+
+    .scroll-prompt {
+        bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+        max-width: calc(100% - 2rem);
+        padding: .8rem 1rem;
+        font-size: clamp(.72rem, 2.8vw, .9rem);
+        letter-spacing: .1em;
+    }
+}
+
+/* Shorter phones: tighten the cover a little further. */
+@media (orientation: portrait) and (max-width: 37.5rem) and (max-height: 45rem) {
+    .cover-layout {
+        padding-top: max(1.5rem, env(safe-area-inset-top, 0px));
+        padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .cover-copy .eyebrow {
+        margin-bottom: .8rem;
+    }
+
+    .cover-copy h1 {
+        font-size: clamp(4.5rem, 23vw, 6.5rem);
+        gap: .35rem;
+    }
+
+    .cover-copy .ornament {
+        margin-top: .8rem;
+    }
+}
