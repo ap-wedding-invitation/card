@@ -630,6 +630,24 @@ p {
         font-size: clamp(1.05rem,4.8vw,1.35rem);
         letter-spacing: .14em
     }
+
+    .cover-copy h1 {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        margin: .05em 0;
+        font-size: clamp(4rem,22vw,7rem);
+        line-height: .78
+    }
+
+    .cover-copy h1 i {
+        font-size: clamp(1.75rem,7vw,2.5rem);
+        margin: .08em 0
+    }
+
+    .cover-botanical {
+        opacity: .2
+    }
 }
 
 /* Phones held sideways: very little height, so put the names on one line. */
@@ -1041,11 +1059,11 @@ p {
 .scratch-footnote {
     max-width: min(100%,var(--content));
     margin: 0 auto .75rem;
-    font-size: clamp(1.15rem,3.1vw,1.55rem);
+    font-size: clamp(1.35rem,4vw,1.65rem);
     line-height: 1.4;
-    color: #93836a;
-    font-family: var(--font-script);
-    font-style: italic;
+    color: #786d5d;
+    font-family: var(--font-body);
+    font-weight: 600;
     text-wrap: balance
 }
 
