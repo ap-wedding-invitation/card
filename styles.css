@@ -182,9 +182,10 @@ p {
 
 .cover-copy {
     position: relative;
-    flex: 0 1 30rem;
+    flex: 1 1 48rem;
     min-width: 0;
-    max-width: 30rem;
+    max-width: 54rem;
+    width: 100%;
     text-align: center;
     color: #4d3a35;
     opacity: 0;
@@ -200,6 +201,11 @@ p {
     color: #6f5a52
 }
 
+.cover-copy .eyebrow {
+    font-size: clamp(1.25rem,3.2vw,2.1rem);
+    letter-spacing: .15em
+}
+
 .script-small,.script-heading {
     font-family: var(--font-script);
     font-weight: 400
@@ -212,14 +218,27 @@ p {
 
 .cover-copy h1 {
     font-family: var(--font-names);
-    font-size: clamp(3.5rem,min(11vw,14vh),7.5rem);
+    font-size: clamp(4rem,18vw,11rem);
     font-weight: 400;
-    line-height: .95;
-    margin: .1em 0 .15em;
-    display: flex;
-    flex-direction: column;
+    line-height: .82;
+    height: min(64vh,42rem);
+    height: min(64svh,42rem);
+    width: 100%;
+    margin: .05em 0;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
     align-items: center;
     color: #4d3a35
+}
+
+.cover-copy h1 span:first-child {
+    grid-row: 1;
+    align-self: center
+}
+
+.cover-copy h1 span:last-child {
+    grid-row: 3;
+    align-self: center
 }
 
 .cover-copy h1 span:first-child::first-letter,.cover-copy h1 span:last-child::first-letter {
@@ -229,10 +248,12 @@ p {
 
 .cover-copy h1 i {
     font-family: var(--font-body);
-    font-size: clamp(1.25rem,3vw,1.75rem);
+    grid-row: 2;
+    justify-self: center;
+    font-size: clamp(1.75rem,4vw,3rem);
     font-style: normal;
     font-weight: 400;
-    margin: .1em 0;
+    margin: 0;
     color: #7d685d
 }
 
@@ -599,10 +620,6 @@ p {
         width: 100%
     }
 
-    .cover-copy h1 {
-        font-size: clamp(3.5rem,min(18vw,10vh),6.5rem)
-    }
-
     .cover-botanical {
         opacity: .55
     }
@@ -626,37 +643,8 @@ p {
         letter-spacing: .16em
     }
 
-    .cover-copy .eyebrow {
-        font-size: clamp(1.05rem,4.8vw,1.35rem);
-        letter-spacing: .14em
-    }
-
     .cover-copy h1 {
-        display: grid;
-        grid-template-rows: 1fr auto 1fr;
-        height: min(58vh,31rem);
-        height: min(58svh,31rem);
-        width: 100%;
-        margin: .05em 0;
-        font-size: clamp(4rem,22vw,7rem);
-        line-height: .82
-    }
-
-    .cover-copy h1 span:first-child {
-        grid-row: 1;
-        align-self: center
-    }
-
-    .cover-copy h1 span:last-child {
-        grid-row: 3;
-        align-self: center
-    }
-
-    .cover-copy h1 i {
-        grid-row: 2;
-        justify-self: center;
-        font-size: clamp(1.75rem,7vw,2.5rem);
-        margin: .08em 0
+        font-size: clamp(4rem,22vw,7rem)
     }
 
     .cover-botanical {
@@ -682,12 +670,9 @@ p {
     }
 
     .cover-copy h1 {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: baseline;
-        gap: 0 .2em;
-        font-size: clamp(2.25rem,13vh,3.5rem)
+        height: min(58vh,18rem);
+        height: min(58svh,18rem);
+        font-size: clamp(3.5rem,15vh,7rem)
     }
 
     .cover-note {
